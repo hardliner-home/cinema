@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  defaults format: :json do
+    devise_for :users, controllers: {:sessions => "sessions"}
+    resources :movies, only: [:index, :show, :update] do
+      get :details, on: :member
+      resources :ratings, only: [:create]
+    end
+  end
+
 end
