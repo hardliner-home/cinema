@@ -27,6 +27,8 @@ gem 'faraday_middleware'
 gem 'devise'
 gem 'devise-jwt'
 gem 'pundit'
+gem 'jsonapi-serializer'
+gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -37,7 +39,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'json_spec'
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'fuubar'

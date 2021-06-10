@@ -10,7 +10,7 @@ describe MoviesController, type: :controller do
     end
 
     it 'Render empty JSON' do
-      expect(json_body).to be_json_eql([])
+      expect(json_body).to eq({data: []})
     end
   end
 
@@ -23,7 +23,7 @@ describe MoviesController, type: :controller do
     end
 
     it 'Render movie JSON' do
-      expect(json_body['title']).to eq(movie.title)
+      expect(json_body[:data][:attributes][:title]).to eq(movie.title)
     end
   end
 
@@ -39,7 +39,7 @@ describe MoviesController, type: :controller do
     end
 
     it 'Render movie JSON' do
-      expect(json_body['price_cents']).to eq(10000)
+      expect(json_body[:data][:attributes][:price][:cents]).to eq(10000)
     end
   end
 

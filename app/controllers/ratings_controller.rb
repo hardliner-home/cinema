@@ -5,7 +5,7 @@ class RatingsController < ApplicationController
   def create
     rating = @movie.ratings.build(rating_params)
     rating.user = current_user
-    respond_with_save(rating)
+    respond_with_save(rating, serializer: RatingSerializer)
   end
 
   private

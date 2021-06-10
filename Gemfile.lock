@@ -130,10 +130,21 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    json_spec (1.1.5)
-      multi_json (~> 1.0)
-      rspec (>= 2.0, < 4.0)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     jwt (2.2.3)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -157,7 +168,6 @@ GEM
       money (~> 6.13.2)
       railties (>= 3.0)
     msgpack (1.4.2)
-    multi_json (1.15.0)
     multipart-post (2.1.1)
     nio4r (2.5.7)
     nokogiri (1.11.7)
@@ -210,10 +220,6 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    rspec (3.10.0)
-      rspec-core (~> 3.10.0)
-      rspec-expectations (~> 3.10.0)
-      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -273,7 +279,8 @@ DEPENDENCIES
   faraday
   faraday_middleware
   fuubar
-  json_spec
+  jsonapi-serializer
+  kaminari
   listen (~> 3.3)
   money-rails
   pg (~> 1.1)

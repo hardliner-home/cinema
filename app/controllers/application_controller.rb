@@ -6,9 +6,9 @@ class ApplicationController < ActionController::API
 
   protected
 
-  def respond_with_save(record)
+  def respond_with_save(record, serializer: ApplicationSerializer, options: {})
     if record.save
-      render json: record
+      render json: serializer.new(record, options)
     else
       render json: { error: record.errors }, status: 422
     end

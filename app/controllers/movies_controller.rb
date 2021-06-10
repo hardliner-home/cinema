@@ -5,22 +5,22 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :update, :details]
 
   def index
-    @movies = Movie.all
-    render json: @movies.as_json(methods: [:average_rating])
+    @movies = Movie.page(params[:page])
+    render json: MovieSerializer.new(@movies)
   end
 
   def show
-    render json: @movie.as_json(methods: [:average_rating])
+    render json: MovieSerializer.new(@movie)
   end
 
   def update
     authorize @movie
     @movie.update(movie_params)
-    respond_with_save(@movie)
+    respond_with_save(@movie, serializer: MovieSerializer)
   end
 
   def details
-    render json: @movie.as_json(methods: [:imdb_details, :average_rating])
+    render json: MovieDetailsSerializer.new(@movie, { include: [:ratings] })
   end
 
   private
