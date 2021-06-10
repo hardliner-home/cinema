@@ -46,3 +46,12 @@
     From my point of view becomes more popular than for example: [cancancan](https://github.com/CanCanCommunity/cancancan)
    
     because simpler, more customizable and controllable and faster
+   
+8. gem [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer)
+
+   The fastest [JSON:API](https://jsonapi.org/) serializer for Ruby Objects.
+
+9. gem [kaminari](https://github.com/kaminari/kaminari)
+   
+   The best way to paginate collections in application.
+   
